@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Gym Manager</string>
+    <string name="welcome">Welcome</string>
+    <string name="splash_subtitle">Manage your gym related activities on your fingertips</string>
+    <string name="login_to_your_gym">LOGIN TO YOUR GYM</string>
+    <string name="login">LOGIN</string>
+    <string name="pin">PIN</string>
+    <string name="trainers">Trainers</string>
+    <string name="members">Members</string>
+    <string name="equipments">Equipments</string>
+    <string name="name">Name</string>
+    <string name="weight">Weight (KG)</string>
+    <string name="height">Height (Inch)</string>
+    <string name="workout_type">Workout Type</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="address">Address</string>
+    <string name="fees">Fees</string>
+    <string name="add_member">ADD MEMBER</string>
+    <string name="add_trainer">ADD TRAINER</string>
+    <string name="fees_period">Fees Period</string>
+    <string name="subscription_date">Subscription Date</string>
+    <string name="subscription_till">Subscription Till</string>
+    <string name="add_nack">Neck (Inch)</string>
+    <string name="add_weist">Weist (Inch)</string>
+    <string name="add_fat_per">Fat (%)</string>
+    <string name="save_sig">SAVE SINGNATURE</string>
+    <string name="sig">Singnature</string>
+    <string name="backup">Backup</string>
+    <string name="aadhar">Aadhar No</string>
+    <string name="signature_text1">:- Fees should be paid in advance.Deposit fees can not be refundable </string>
+    <string name="signature_text2">:- If any accident done by customer the propriter or Gym managment will not be reponsible</string>
+    <string name="signature_text3">:- Every member will have to obey the instruction given by the faculty member</string>
+    <string name="signature_text4">:- I already imform about my madical condition and gym will not reponsible if any accident happen</string>
+    <string name="total_fitness">Total fitness</string>
+</resources>
