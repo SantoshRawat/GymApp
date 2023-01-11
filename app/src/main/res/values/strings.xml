@@ -27,9 +27,9 @@
     <string name="sig">Singnature</string>
     <string name="backup">Backup</string>
     <string name="aadhar">Aadhar No</string>
-    <string name="signature_text1">:- Fees should be paid in advance.Deposit fees can not be refundable </string>
-    <string name="signature_text2">:- If any accident done by customer the propriter or Gym managment will not be reponsible</string>
-    <string name="signature_text3">:- Every member will have to obey the instruction given by the faculty member</string>
-    <string name="signature_text4">:- I already imform about my madical condition and gym will not reponsible if any accident happen</string>
+    <string name="signature_text1">Fees should be paid in advance.Deposit fees can not be refundable </string>
+    <string name="signature_text2">If any accident done by customer the propriter or Gym managment will not be reponsible</string>
+    <string name="signature_text3">Every member will have to obey the instruction given by the faculty member</string>
+    <string name="signature_text4">The gym will not be responsible if any accident happens to me</string>
     <string name="total_fitness">Total fitness</string>
 </resources>

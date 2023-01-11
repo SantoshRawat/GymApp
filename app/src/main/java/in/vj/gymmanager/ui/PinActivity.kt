@@ -15,7 +15,7 @@ class PinActivity : AppCompatActivity() {
         val etpin = findViewById<EditText>(R.id.etPin)
         findViewById<Button>(R.id.btnSubmit).setOnClickListener {
             val pin =etpin.text.toString()
-            if (pin.equals("1234")){
+            if (pin.equals("786092")){
             startActivity(Intent(this@PinActivity, HomeActivity::class.java))
             finish()}
             else

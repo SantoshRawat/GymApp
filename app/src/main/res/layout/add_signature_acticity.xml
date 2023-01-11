@@ -13,6 +13,7 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/buttons_container"
         android:paddingTop="16dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -21,8 +22,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -35,13 +36,14 @@
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:text="Name :-"
+                        android:textStyle="bold"
                         android:textSize="20dp" />
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etName"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:inputType="textPersonName" />
 
                 </LinearLayout>
@@ -55,6 +57,7 @@
 
                     <TextView
                         android:id="@+id/joindate"
+                        android:textStyle="bold"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:text="Date :- "
@@ -63,48 +66,59 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etjoindate"
                         android:layout_width="match_parent"
-                        android:focusable="false"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        />
+                        android:layout_weight="1"
+                        android:focusable="false" />
 
                 </LinearLayout>
             </LinearLayout>
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:padding="10dp"
+                android:layout_height="match_parent"
 
-                android:layout_height="match_parent">
+                android:padding="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:layout_height="match_parent">
+                    android:padding="10dp">
+
                     <TextView
                         android:id="@+id/text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/signature_text1"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/text2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
                         android:text="@string/signature_text2"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/text3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
                         android:text="@string/signature_text3"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/text4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
                         android:text="@string/signature_text4"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
             </ScrollView>
