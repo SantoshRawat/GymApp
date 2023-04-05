@@ -6,12 +6,10 @@ import `in`.vj.gymmanager.databinding.ItemUserListBinding
 import `in`.vj.gymmanager.entities.User
 import android.app.DatePickerDialog
 import android.content.Context
-import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.telephony.SmsManager
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -19,8 +17,6 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import androidx.test.core.app.ApplicationProvider
-import androidx.test.core.app.ApplicationProvider.getApplicationContext
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -96,6 +92,17 @@ class MemberListAdapter internal constructor(
 
 
             }
+
+            itemUserListBinding.ivDelete.setOnClickListener {
+                (context.applicationContext as GymApp).getAppDb().userDao().delete(user)
+                (context as MemberListActivity).onBackPressed()
+
+            }
+            itemUserListBinding.ivUpdateUser.setOnClickListener {
+                (context as MemberListActivity).editUserInfo(user)
+            }
+
+
 
 
         }

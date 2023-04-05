@@ -1,27 +1,26 @@
 package `in`.vj.gymmanager.ui
 
 import `in`.vj.gymmanager.GymApp
-import `in`.vj.gymmanager.databinding.ActivityAddMemberBinding
+import `in`.vj.gymmanager.databinding.ActivityEditMemberBinding
 import `in`.vj.gymmanager.entities.User
 import android.app.Activity
 import android.app.DatePickerDialog
 import android.net.Uri
 import android.os.Bundle
-import android.widget.DatePicker
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.github.dhaval2404.imagepicker.ImagePicker
 import java.util.Calendar
-import java.util.Date
 
-class AddMemberActivity : AppCompatActivity() {
+class EditMemberActivity : AppCompatActivity() {
     var imageuri = ""
-    private lateinit var binding: ActivityAddMemberBinding
+    var uid = ""
+    private lateinit var binding: ActivityEditMemberBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddMemberBinding.inflate(layoutInflater)
+        binding = ActivityEditMemberBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setHomeButtonEnabled(true)
 
@@ -29,6 +28,37 @@ class AddMemberActivity : AppCompatActivity() {
     }
 
     private fun initialize() {
+        val bundle: Bundle? = intent.extras
+        uid = bundle?.getString("uid").toString()
+        val name = bundle?.getString("name")
+        val address = bundle?.getString("address")
+        val phone = bundle?.getString("phone")
+        val aadhar = bundle?.getString("aadhar")
+        val height = bundle?.getString("height")
+        val weight = bundle?.getString("weight")
+        val neck = bundle?.getString("neck")
+        val weist = bundle?.getString("weist")
+        val fatper = bundle?.getString("fatper")
+        val subscriptiondate = bundle?.getString("subscriptiondate")
+        val subscriptiontilldate = bundle?.getString("subscriptiontilldate")
+        val fees = bundle?.getString("fees")
+        imageuri = bundle?.getString("imageuri").toString()
+        binding.etName.setText(name)
+        binding.etAddress.setText(address)
+        binding.etPhoneNumber.setText(phone)
+        binding.etAdhar.setText(aadhar)
+        binding.etHeight.setText(height)
+        binding.etWeight.setText(weight)
+        binding.etNack.setText(neck)
+        binding.etWeist.setText(weist)
+        binding.etFatPer.setText(fatper)
+        binding.tvSubsriptionDate.setText(subscriptiondate)
+        binding.tvSubsriptionTillDate.setText(subscriptiontilldate)
+        binding.etFees.setText(fees)
+        if (imageuri.toString().isNotEmpty())
+            binding.ivStory.setImageURI((imageuri as Uri))
+
+
         val calendar = Calendar.getInstance()
         binding.tvSubsriptionDate.setOnClickListener {
             DatePickerDialog(
@@ -66,7 +96,7 @@ class AddMemberActivity : AppCompatActivity() {
                     startForProfileImageResult.launch(intent)
                 }
         }
-        binding.btnAdd.setOnClickListener {
+        binding.btnUpdate.setOnClickListener {
             if (binding.etName.text.toString().isEmpty()) {
                 Toast.makeText(this, "Please enter Name", Toast.LENGTH_SHORT).show()
             } else if (binding.etAddress.text.toString().isEmpty()) {
@@ -127,17 +157,17 @@ class AddMemberActivity : AppCompatActivity() {
                         imageuri = imageuri
 
                     )
-                    addUserInDb(user)
+                    updaeUserInDb(user)
                 }
             }
 
         }
     }
 
-    private fun addUserInDb(user: User) {
-        (application as GymApp).getAppDb().userDao().insertAll(user)
+    private fun updaeUserInDb(user: User) {
+       /* (application as GymApp).getAppDb().userDao().updateUser(uid)
         Toast.makeText(this, "User Added", Toast.LENGTH_SHORT).show()
-        onBackPressed()
+        onBackPressed()*/
     }
 
     private val startForProfileImageResult =

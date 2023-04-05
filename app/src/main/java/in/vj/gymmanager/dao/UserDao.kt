@@ -22,7 +22,10 @@ interface UserDao {
     fun findByName(name: String): User
 
     @Query("UPDATE User SET subscriptiontilldate = (:name) where uid = (:id)")
-    fun updateTillDate(name: String,id:Int)
+    fun updateTillDate(name: String, id: String)
+
+    @Query("UPDATE User SET name = (:name)  where uid = (:id)")
+    fun updateUser(name: String,id:Int)
 
     @Insert
     fun insertAll(vararg users: User)

@@ -1,19 +1,15 @@
 package `in`.vj.gymmanager.ui
 
 import `in`.vj.gymmanager.GymApp
-import `in`.vj.gymmanager.R
-import `in`.vj.gymmanager.databinding.ActivityAddMemberBinding
 import `in`.vj.gymmanager.databinding.ActivityMemberListBinding
 import `in`.vj.gymmanager.entities.User
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.room.ColumnInfo
 
 class MemberListActivity : AppCompatActivity() {
     private var users: List<User>? = null
@@ -62,4 +58,27 @@ class MemberListActivity : AppCompatActivity() {
         binding.rvMemberList.adapter = memberListAdapter
         memberListAdapter.submitList(users)
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
+    fun editUserInfo(user: User) {
+        val intent = Intent(applicationContext, EditMemberActivity::class.java)
+        intent.putExtra("uid", user.uid)
+        intent.putExtra("name", user.name)
+        intent.putExtra("address", user.address)
+        intent.putExtra("phone", user.phoneNumber)
+        intent.putExtra("aadhar", user.aadhar)
+        intent.putExtra("height", user.height)
+        intent.putExtra("weight", user.weight)
+        intent.putExtra("neck", user.neck)
+        intent.putExtra("weist", user.weist)
+        intent.putExtra("fatper", user.fatper)
+        intent.putExtra("subscriptiondate", user.subscriptiondate)
+        intent.putExtra("subscriptiontilldate", user.subscriptiontilldate)
+        intent.putExtra("fees", user.fees)
+        intent.putExtra("imageuri", user.imageuri)
+        startActivity(intent)
+    }
+
 }

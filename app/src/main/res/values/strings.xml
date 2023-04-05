@@ -16,6 +16,7 @@
     <string name="address">Address</string>
     <string name="fees">Fees</string>
     <string name="add_member">ADD MEMBER</string>
+    <string name="update_member">UPDATE MEMBER</string>
     <string name="add_trainer">ADD TRAINER</string>
     <string name="fees_period">Fees Period</string>
     <string name="subscription_date">Subscription Date</string>
